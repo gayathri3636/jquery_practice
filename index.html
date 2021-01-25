@@ -6,13 +6,14 @@
     </head>
     <body>
         <script type="text/javascript">
+        //$(window).load()-- It fires after DOM and all content on page images, css is fully loaded. So this fires after ready event
+        $(window).on('load', function(){
+            alert("window loaded")
+        });
         //$(document).ready()--It fires as soon as DOM is loaded and it loads before all images and css
         $(document).ready(function(){
-            $("#button1").click(function(){
-                alert("jquery tutorial")
-            })
-        })
+            alert("document loaded")
+        });
         </script>
-        <button type="button" id="button1">click me</button>
     </body>
 </html>
