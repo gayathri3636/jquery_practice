@@ -1,11 +1,33 @@
+<!--
+jquery file can be downloaded from CDN server that is closest to user. 
+        
+browser caching-- If user already visited webpage that uses jquery
+from a CDN and then if he arrives at your page the file has already been cached by browser so no need 
+to download again  
+       
+Parallel downloads--allows 2 parallel downloads on CDN server
+        
+Reduced server load
+        
+Disadvantages--Client firewalls may block the CDN so you may have to request
+your clients to whitelist the CDN.
+        
+If CDN doesnt work then we have to write fallback code to use our jquery file which we
+attached in our application.
+ -->
 <!DOCTYPE html>
 <html>
     <head>
         <title>MY JQUERY TUTORIAL</title>
-        <script src="jquery-3.5.1.js"></script>
+        <!--<script src="jquery-3.5.1.js"></script> -->
+        <!-- CDN link below -->
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+        <script>
+        window.jquery || document.write("<script src='jquery-3.5.1.js'><\/script>");
+        </script>
     </head>
     <body>
-        <script type="text/javascript">
+        <script type="text/javascript">       
         //$(window).load()-- It fires after DOM and all content on page images, css is fully loaded. So this fires after ready event
         $(window).on('load', function(){
             alert("window loaded")
