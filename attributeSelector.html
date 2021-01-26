@@ -3,7 +3,14 @@ $('[title]')--selects all elements that have title attribute.
 $('div[title]')-slect all div elemnets that have title attribute.
 $('[title="divTitle]')-select all elements that have title attribute value=divTitle
 $('div[title='divTitle]')-select all div elements that have title attribute value - divTitle
-
+Attribute Equals Selector [name="value"]
+Attribute Not Equal Selector [name!="value"]
+Attribute Contains Selector [name*="value"]
+Attribute Contains Word Selector [name~="value"]
+Attribute Contains Prefix Selector [name|="value"]
+Attribute Starts With Selector [name^="value"]
+Attribute Ends With Selector [name$="value"] 
+case Insensitive jquery
  -->
 <!DOCTYPE html>
 <html>
@@ -12,18 +19,22 @@ $('div[title='divTitle]')-select all div elements that have title attribute valu
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
         <script type="text/javascript">
         $(document).ready(function(){
+            //select all elements with div title and make it case insensitive
+            $('div[title]').filter(function(){
+                return $(this).attr('title').toLowerCase() == 'divtitle';
+            }).css('border', '3px solid red')
             //slect all elemnets with title attributes and sets 5px solid red border
-            //$('[title]').css('border', '5px solid red')
+            $('[title]').css('border', '5px solid red')
             //slect all div elements with titlt attribute and sets 5px solid red border
-            //$('div[title]').css('border', '5px solid red')
+            $('div[title]').css('border', '5px solid red')
             //slect all elements with title attribute value- divtitle and sets 5px solid red border
-            //$('[title="div1Title"]').css('border', '5px solid red')
+            $('[title="div1Title"]').css('border', '5px solid red')
             //select all div elements witj title attribute value-div1title and set 5px solid red border
-            //$('div[title="div1Title"]').css('border', '5px solid red')
+            $('div[title="div1Title"]').css('border', '5px solid red')
             //slect all div elements with both title and style attributes and sets 5px solid red
-            //$('div[title][style]').css('border', '5px solid red')
+            $('div[title][style]').css('border', '5px solid red')
             //select all div elements with title attribute value-divTitle, and style attribute value- background red and sets 5px solid red
-            //$('div[title="divTitle"][style="background-color:red"]').css('border', '5px solid red')
+            $('div[title="divTitle"][style="background-color:red"]').css('border', '5px solid red')
             //select all div elemnets with either title or style attributes and sets 5px solid black border
             $('div[title],[style]').css('border', '5px solid black')
         })
