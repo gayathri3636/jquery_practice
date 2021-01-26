@@ -1,0 +1,67 @@
+<!--
+$('[title]')--selects all elements that have title attribute.
+$('div[title]')-slect all div elemnets that have title attribute.
+$('[title="divTitle]')-select all elements that have title attribute value=divTitle
+$('div[title='divTitle]')-select all div elements that have title attribute value - divTitle
+
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            //slect all elemnets with title attributes and sets 5px solid red border
+            //$('[title]').css('border', '5px solid red')
+            //slect all div elements with titlt attribute and sets 5px solid red border
+            //$('div[title]').css('border', '5px solid red')
+            //slect all elements with title attribute value- divtitle and sets 5px solid red border
+            //$('[title="div1Title"]').css('border', '5px solid red')
+            //select all div elements witj title attribute value-div1title and set 5px solid red border
+            //$('div[title="div1Title"]').css('border', '5px solid red')
+            //slect all div elements with both title and style attributes and sets 5px solid red
+            //$('div[title][style]').css('border', '5px solid red')
+            //select all div elements with title attribute value-divTitle, and style attribute value- background red and sets 5px solid red
+            //$('div[title="divTitle"][style="background-color:red"]').css('border', '5px solid red')
+            //select all div elemnets with either title or style attributes and sets 5px solid black border
+            $('div[title],[style]').css('border', '5px solid black')
+        })
+        </script>
+    </head>
+    <body>
+         <div title="div1Title">
+        DIV 1
+    </div>
+    <br />
+    <div title="div2Title">
+        DIV 2
+    </div>
+    <p title="pTitle">
+        This is a paragraph
+    </p>
+    <span title="div1Title">
+        SAPN 1
+    </span>
+    <br /><br />
+    <span>
+        SPAN 2
+    </span>
+    <!-- ------------------------------------------------------ -->
+     <div title="divTitle" style="background-color:red">
+        Red DIV
+    </div>
+    <br />
+    <div title="divTitle" style="background-color:green">
+        Green DIV
+    </div>
+    <br />
+    <div title="divTitle">
+        Normal Div
+    </div>
+    <br />
+    <div>
+        Normal Div without any attributes
+    </div>
+    </body>
+</html>
