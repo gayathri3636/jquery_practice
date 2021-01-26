@@ -1,0 +1,33 @@
+<!--
+It selects all checked checkboxes or radio buttons
+
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btnSubmit').click(function(){
+                var result = $('input[type="radio"]:checked');
+                if(result.length>0){
+                    $('#divResult').html(result.val() + "is checked");
+                }else{
+                    $('#divResult').html("No value is checked");
+                }
+            });
+        });
+        </script>
+    </head>
+    <body>
+        Gender :
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <br /><br />
+        <input id="btnSubmit" type="submit" value="submit" />
+        <br /><br />
+        <div id="divResult">
+        </div>
+    </body>
+</html>
