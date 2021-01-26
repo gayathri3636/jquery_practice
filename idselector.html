@@ -1,0 +1,37 @@
+<!-- jquery #id uses javascript document.getElementById behind the scenes
+HTML element IDs must be unique on the page whereas jquery #id selectors
+returns only first element if you have 2 or more elements with same ID.
+
+Javascript document.getElementById throws error if element with given id is not
+found whereas jquery #id selector will not throw error. To check if an element is returned
+by the #id selector use length property.
+
+Javascripts document.getElementById() and jquery(#id) selectors are not same.
+document.getElementById returns raw DOM object whereas jquery(#id) returns jquery object
+that wraps the DOM object and provides jquery methods like css(), click(). To get underlying 
+DOM object from jquery object use $(#id)[0]
+
+document.getElementById is faster than jquery(#id).
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            //$('#button1').css('background-color', 'yellow')
+            //if($('#button1').length > 0) {
+            //  alert('Element found')
+            //} else{
+            //  alert('Element not found')
+            //}
+            //Raw DOM object
+            alert($('#button1')[0])
+        })
+        </script>
+    </head>
+    <body>
+        <input type="button" id="button1" value="click Me" />
+    </body>
+</html>
