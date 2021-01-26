@@ -12,17 +12,17 @@ $('div.small,.big')--selects div elements with class small and any element with 
         <script type="text/javascript">
         $(document).ready(function(){
             //select all elements with class small and set 5px solid red border
-            //$('.small').css('border','5px solid red')
+            $('.small').css('border','5px solid red')
             //select all elements with class small or big and set 5px solid red border
-            //$('.small, .big').css('border','5px solid red')
+            $('.small, .big').css('border','5px solid red')
             //select all elements with class small and all span elements with class big and 
             //set 5px solid red border
-            //$('span.big, .small').css('border', '5px solid red')
+            $('span.big, .small').css('border', '5px solid red')
             //select all elements with class small that are nested in element with id = div2 and sets
             //5px solid border
-            //$('#div2 .small').css('border','5px solid red')
+            $('#div2 .small').css('border','5px solid red')
             //selelct all elements with class small and sets 5px solid red border. Notice div1 has two classes small and big
-            //$('.small').css('border', '5px solid red')
+            $('.small').css('border', '5px solid red')
             //selects all elements with class small and big. There should be no space between class names
             $('.small.big').css('border', '5px solid red') 
         })
