@@ -1,0 +1,60 @@
+<!-- selecting elements by classname
+$('.small')--selects all elements with class small
+$('.small, .big')--selects all elements with classname small or big
+$('div.small,.big')--selects div elements with class small and any element with class big
+
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            //select all elements with class small and set 5px solid red border
+            //$('.small').css('border','5px solid red')
+            //select all elements with class small or big and set 5px solid red border
+            //$('.small, .big').css('border','5px solid red')
+            //select all elements with class small and all span elements with class big and 
+            //set 5px solid red border
+            //$('span.big, .small').css('border', '5px solid red')
+            //select all elements with class small that are nested in element with id = div2 and sets
+            //5px solid border
+            //$('#div2 .small').css('border','5px solid red')
+            //selelct all elements with class small and sets 5px solid red border. Notice div1 has two classes small and big
+            //$('.small').css('border', '5px solid red')
+            //selects all elements with class small and big. There should be no space between class names
+            $('.small.big').css('border', '5px solid red') 
+        })
+        </script>
+    </head>
+    <body>
+     <div id="div1" class="small big">
+        DIV 1
+    </div>
+    <br />
+    <div id="div2">
+        Div 2
+        <br />
+        <div class="small">
+            DIV 3
+        </div>
+        <br />
+        <span class="small">
+            SPAN
+        </span>
+    </div>
+     <span class="small">
+        Span 1
+    </span>
+    <br /><br />
+    <div class="small">
+        Div 1
+    </div>
+    <br />
+    <span class="big">
+        Span 2
+    </span>
+    <p class="big">This is a paragraph</p>
+    </body>
+</html>
