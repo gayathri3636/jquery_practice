@@ -1,0 +1,45 @@
+<!--
+How does method chaining work
+1. $('li') returns a jquery collection object that contains all the elements that match the selector
+2. On the collection object css() method is called. This method applies the color to all the elements in the collection and returns the collection again.
+3. On the collection that is returned by the css() method, the slideUp() method is called.
+4. This process continues until we reach the last method in the chain.
+
+When will method chaining not work
+Method chaining will not work if a method in the chain does not return an object. In the example below, text() method returns a string
+that contains the text of all the list items and not an object. Hence the chaining does not work in this case.
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+        //without method chaining
+        /*$(document).ready(function(){
+            $('li').css('color', 'blue');
+            $('li').slideUp(1000);
+            $('li').slideDown(1000);
+            $('li').attr('title', 'MY TITLE');
+        })*/
+
+        //with method chaining
+        $(document).ready(function(){
+            $('li')
+                .css('color', 'blue')
+                .slideUp(1000)
+                .slideDown(1000)
+                .attr('title', 'MY TITLE');
+        })
+        </script>
+    </head>
+    <body>
+        <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+    </body>
+</html>
