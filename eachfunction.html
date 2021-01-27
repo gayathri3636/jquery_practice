@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+           /* $(document).ready(function(){
+                $('li').each(function(){
+                    if($(this).text() == 'UK'){
+                        return false;
+                    }
+                    alert($(this).text())
+                })
+            })*/
+            /*$(document).ready(function(){
+                    $('li').css('color','red')
+            })*/
+            $(document).ready(function(){
+                var result  = '';
+                $('li').each(function(){
+                    result += '<br/>' + $(this).text();
+                })
+                $('#divResult').html(result);
+            })
+        </script>
+    </head>
+    <body>
+    <ul>
+        <li>US</li>
+        <li>India</li>
+        <li>UK</li>
+        <li>Canada</li>
+        <li>Australia</li>
+    </ul>
+    <div id="divResult"></div>
+    </body>
+</html>
