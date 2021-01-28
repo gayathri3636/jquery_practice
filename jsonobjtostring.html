@@ -1,0 +1,42 @@
+<!--
+JSON.stringify() method converts a JSON object (or array) into a JSON string.
+JSON.parse() method converts a JSON string to JSON array. We then use the jQuery each() method to loop thru each employee JSON object and retrieve the respective property values.
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            /*var employeeJson = [{
+                "firstName":"William",
+                "lastname": "Morrissey",
+                "gender": "male",
+                "salary":"50000"
+            },
+            {
+                "firstName":"kevin",
+                "lastname": "john",
+                "gender": "male",
+                "salary":"50000"
+            }
+            ];*/
+var JSONString = '[{ "firstName": "Todd", "lastName": "Grover", "gender": "Male", "salary": 50000 }, { "firstName": "Sara", "lastName": "Baker", "gender": "Female", "salary": 40000 }]';            //var JsonString = JSON.stringify(employeeJson);
+            var JsonArray = Json.parse(JSONString);
+            var result = '';
+            $.each(JsonArray, function (i, item) {
+                result += 'First Name = ' + item.firstName + '<br/>';
+                result += 'Last Name = ' + item.lastname + '<br/>';
+                result += 'Gender = ' + item.gender + '<br/>';
+                result += 'Salary = ' + item.salary + '<br/><br/>';
+            });
+            $('#divResult').html(result);
+        })
+        </script>
+    </head>
+    <body>
+        <div id="divResult">
+        </div
+    </body>
+</html>
